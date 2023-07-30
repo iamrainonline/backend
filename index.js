@@ -21,7 +21,6 @@ const corsConfig = {
    credentials: true,
    methods: "GET,HEAD,OPTIONS,PUT,POST,DELETE,PATCH",
 };
-app.options("*", cors());
 app.use(cors(corsConfig));
 
 app.use("/api/auth", authRoutes);
