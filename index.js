@@ -15,12 +15,11 @@ app.use(cookieParser());
 const corsConfig = {
    origin: [
       "http://localhost:3000",
-      "https://frontend-beta-rose.vercel.app",
-      "https://frontend-beta-rose.vercel.app/",
-      "https://rainfrontend.netlify.app/",
+      "https://frontend-83nm.vercel.app",
+      "https://frontend-83nm.vercel.app/",
    ],
    credentials: true,
-   methods: "GET,HEAD,OPTIONS,PUT,POST,DELETE, PATCH",
+   methods: "GET,HEAD,OPTIONS,PUT,POST,DELETE,PATCH",
 };
 app.use(cors(corsConfig));
 
