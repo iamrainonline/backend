@@ -14,13 +14,14 @@ app.use(cookieParser());
 
 const corsConfig = {
    origin: [
-      "http://localhost:3000",
       "https://frontend-83nm.vercel.app",
       "https://frontend-83nm.vercel.app/",
+      "http://localhost:3000",
    ],
    credentials: true,
    methods: "GET,HEAD,OPTIONS,PUT,POST,DELETE,PATCH",
 };
+app.options("*", cors());
 app.use(cors(corsConfig));
 
 app.use("/api/auth", authRoutes);
