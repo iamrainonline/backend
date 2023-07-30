@@ -12,12 +12,26 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-const corsConfig = {
-   origin: ["https://frontend-83nm.vercel.app", "http://localhost:3000"],
-   credentials: true,
-   methods: "GET,HEAD,OPTIONS,PUT,POST,DELETE,PATCH",
-};
-app.use(cors(corsConfig));
+responseBuilder.header(
+   "Access-Control-Allow-Origin",
+   "https://frontend-83nm.vercel.app"
+);
+responseBuilder.header("Access-Control-Allow-Credentials", "true");
+responseBuilder.header(
+   "Access-Control-Allow-Methods",
+   "GET,HEAD,OPTIONS,POST,PUT"
+);
+responseBuilder.header(
+   "Access-Control-Allow-Headers",
+   "Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization"
+);
+
+// const corsConfig = {
+//    origin: ["https://frontend-83nm.vercel.app", "http://localhost:3000"],
+//    credentials: true,
+//    methods: "GET,HEAD,OPTIONS,PUT,POST,DELETE,PATCH",
+// };
+// app.use(cors(corsConfig));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
