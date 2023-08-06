@@ -53,7 +53,7 @@ export const login = (req, res) => {
       // JWT Cookie
       // (access_token = cookie name & token = value of cookie)
       res.cookie("access_token", token, {
-         httpOnly: true,
+         // httpOnly: true,
       })
          .status(200)
          .json(other);

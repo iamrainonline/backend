@@ -13,7 +13,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsConfig = {
-   origin: "https://frontend-83nm.vercel.app",
+   origin: [
+      "https://frontend-83nm.vercel.app",
+      "https://puce-fuzzy-elk.cyclic.app",
+   ],
    credentials: true,
    methods: "GET,HEAD,OPTIONS,PUT,POST,DELETE,PATCH",
 };
